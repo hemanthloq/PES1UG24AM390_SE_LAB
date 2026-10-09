@@ -1,5 +1,6 @@
 import math
 import random
+import colorsys
 import pygame
 
 VIEW_W, VIEW_H = 800, 560
@@ -12,8 +13,16 @@ PHASES = [random.uniform(0, math.tau) for _ in range(3)]
 
 
 def sky_color(wave):
-    """Return an (r, g, b) sky colour for the current wave, or None for the default."""
-    pass
+    """Return an (r, g, b) sky colour for the current wave, or None for the default.
+
+    The hue rotates through the spectrum as waves progress and the sky slowly
+    brightens, giving each wave a distinct mood while staying dark enough for
+    the sprites to read clearly.
+    """
+    hue = (0.62 + 0.11 * (wave - 1)) % 1.0        # start deep blue, shift each wave
+    value = min(0.16 + 0.025 * (wave - 1), 0.45)  # brighten gradually, capped
+    r, g, b = colorsys.hsv_to_rgb(hue, 0.65, value)
+    return (int(r * 255), int(g * 255), int(b * 255))
 
 
 def on_humanoid_rescued(humanoid):
