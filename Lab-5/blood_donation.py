@@ -15,7 +15,10 @@ from datetime import date, timedelta
 
 OFFICER_PASSWORD = os.environ.get("BLOODBANK_OFFICER_PASSWORD", "")
 donors = []
-stock = {"A+": 0, "A-": 0, "B+": 0, "B-": 0, "O+": 0, "O-": 0, "AB+": 0, "AB-": 0}
+stock = {
+    "A+": 0, "A-": 0, "B+": 0, "B-": 0,
+    "O+": 0, "O-": 0, "AB+": 0, "AB-": 0,
+}
 COMPATIBLE = {
     "A+": ["A+", "A-", "O+", "O-"],
     "B+": ["B+", "B-", "O+", "O-"],
@@ -83,7 +86,6 @@ def low_stock(threshold=2):
     return [group for group, units in stock.items() if units < threshold]
 
 
-
 def donor_sheet_path():
     """Create an empty temporary CSV file and return its path."""
     # Helper kept for the lab: not called by the demo
@@ -123,8 +125,8 @@ def main():
     print("Units for an A+ patient:", units_for("A+"))
     print("Units for a Z+ patient:", units_for("Z+"))
     print("Is O- universal?", is_universal("O-"))
-    print("Low stock groups:", low_stock()) # below 2 units
-    eligible=[donor["name"] for donor in donors if can_donate(donor)]
+    print("Low stock groups:", low_stock())  # below 2 units
+    eligible = [donor["name"] for donor in donors if can_donate(donor)]
     print("Donors eligible today:", eligible)
 
 
