@@ -1,0 +1,197 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.2.0, pluggy-1.7.0
+rootdir: D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7
+plugins: anyio-4.16.0, hypothesis-6.170.17
+collected 8 items
+
+test_recycling_rewards.py FFF.F.F.                                       [100%]
+
+================================== FAILURES ===================================
+_______________________ test_parse_collection_no_crash ________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 9, in test_parse_collection_no_crash
+  |     def test_parse_collection_no_crash(s):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 10, in test_parse_collection_no_crash
+    |     parse_collection(s)
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\recycling_rewards.py", line 3, in parse_collection
+    |     return material.strip().title(), float(kg)
+    |                                      ^^^^^^^^^
+    | ValueError: could not convert string to float: ''
+    | Failing test case: test_parse_collection_no_crash(
+    |     s=':',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 10, in test_parse_collection_no_crash
+    |     parse_collection(s)
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\recycling_rewards.py", line 2, in parse_collection
+    |     material, kg = text.split(':')
+    |     ^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_parse_collection_no_crash(
+    |     s='',  # or any other generated value
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 10, in test_parse_collection_no_crash
+    |     parse_collection(s)
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\recycling_rewards.py", line 2, in parse_collection
+    |     material, kg = text.split(':')
+    |                    ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_parse_collection_no_crash(
+    |     s=None,  # or any other generated value
+    | )
+    +------------------------------------
+________________________ test_weight_average_no_crash _________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 14, in test_weight_average_no_crash
+  |     def test_weight_average_no_crash(s):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 15, in test_weight_average_no_crash
+    |     weight_average(s)
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\recycling_rewards.py", line 6, in weight_average
+    |     values = [int(r) for r in weights_csv.split(',')]
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\recycling_rewards.py", line 6, in <listcomp>
+    |     values = [int(r) for r in weights_csv.split(',')]
+    |               ^^^^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    | Failing test case: test_weight_average_no_crash(
+    |     s='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 15, in test_weight_average_no_crash
+    |     weight_average(s)
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\recycling_rewards.py", line 6, in weight_average
+    |     values = [int(r) for r in weights_csv.split(',')]
+    |                               ^^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_weight_average_no_crash(
+    |     s=None,  # or any other generated value
+    | )
+    +------------------------------------
+__________________________ test_net_points_no_crash ___________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 19, in test_net_points_no_crash
+  |     def test_net_points_no_crash(s):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 20, in test_net_points_no_crash
+    |     net_points(s)
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\recycling_rewards.py", line 11, in net_points
+    |     total = float(points) * 2 - float(penalty)
+    |             ^^^^^^^^^^^^^
+    | ValueError: could not convert string to float: ''
+    | Failing test case: test_net_points_no_crash(
+    |     s='|',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 20, in test_net_points_no_crash
+    |     net_points(s)
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\recycling_rewards.py", line 10, in net_points
+    |     points, penalty = text.split('|')
+    |     ^^^^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_net_points_no_crash(
+    |     s='',  # or any other generated value
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 20, in test_net_points_no_crash
+    |     net_points(s)
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\recycling_rewards.py", line 10, in net_points
+    |     points, penalty = text.split('|')
+    |                       ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_net_points_no_crash(
+    |     s=None,  # or any other generated value
+    | )
+    +------------------------------------
+___________ test_parse_collection_result_is_finite_and_non_negative ___________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 37, in test_parse_collection_result_is_finite_and_non_negative
+  |     def test_parse_collection_result_is_finite_and_non_negative(s):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 38, in test_parse_collection_result_is_finite_and_non_negative
+    |     result = parse_collection(s)
+    |              ^^^^^^^^^^^^^^^^^^^
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\recycling_rewards.py", line 3, in parse_collection
+    |     return material.strip().title(), float(kg)
+    |                                      ^^^^^^^^^
+    | ValueError: could not convert string to float: ''
+    | Failing test case: test_parse_collection_result_is_finite_and_non_negative(
+    |     s=':',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 38, in test_parse_collection_result_is_finite_and_non_negative
+    |     result = parse_collection(s)
+    |              ^^^^^^^^^^^^^^^^^^^
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\recycling_rewards.py", line 2, in parse_collection
+    |     material, kg = text.split(':')
+    |     ^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_parse_collection_result_is_finite_and_non_negative(
+    |     s='',  # or any other generated value
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\test_recycling_rewards.py", line 38, in test_parse_collection_result_is_finite_and_non_negative
+    |     result = parse_collection(s)
+    |              ^^^^^^^^^^^^^^^^^^^
+    |   File "D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7\recycling_rewards.py", line 2, in parse_collection
+    |     material, kg = text.split(':')
+    |                    ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_parse_collection_result_is_finite_and_non_negative(
+    |     s=None,  # or any other generated value
+    | )
+    +------------------------------------
+____________________ test_net_points_never_nan_or_negative ____________________
+
+    @given(st.floats(allow_nan=True, allow_infinity=True),
+>          st.floats(allow_nan=True, allow_infinity=True))
+                   ^^^
+
+test_recycling_rewards.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+points = 0.0, penalty = -inf
+
+    @given(st.floats(allow_nan=True, allow_infinity=True),
+           st.floats(allow_nan=True, allow_infinity=True))
+    def test_net_points_never_nan_or_negative(points, penalty):
+        result = net_points(f"{points}|{penalty}")
+        if result is not None:
+>           assert math.isfinite(result) and result >= 0
+E           assert (False)
+E            +  where False = <built-in function isfinite>(inf)
+E            +    where <built-in function isfinite> = math.isfinite
+E           Failing test case: test_net_points_never_nan_or_negative(
+E               points=0.0,  # or any other generated value
+E               penalty=-inf,
+E           )
+
+test_recycling_rewards.py:54: AssertionError
+=========================== short test summary info ===========================
+FAILED test_recycling_rewards.py::test_parse_collection_no_crash - ExceptionG...
+FAILED test_recycling_rewards.py::test_weight_average_no_crash - ExceptionGro...
+FAILED test_recycling_rewards.py::test_net_points_no_crash - ExceptionGroup: ...
+FAILED test_recycling_rewards.py::test_parse_collection_result_is_finite_and_non_negative
+FAILED test_recycling_rewards.py::test_net_points_never_nan_or_negative - ass...
+========================= 5 failed, 3 passed in 4.41s =========================
