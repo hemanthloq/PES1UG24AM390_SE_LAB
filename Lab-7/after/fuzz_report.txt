@@ -1,0 +1,9 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.2.0, pluggy-1.7.0
+rootdir: D:\pesu\Subjects\SE\SE lab\PES1UG24AM390_SE_LAB\Lab-7
+plugins: anyio-4.16.0, hypothesis-6.170.17
+collected 8 items
+
+test_recycling_rewards.py ........                                       [100%]
+
+============================== 8 passed in 2.76s ==============================
